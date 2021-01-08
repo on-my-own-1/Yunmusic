@@ -60,11 +60,7 @@ public class Interface1 extends JFrame {
 		
 		final JLabel l = new JLabel();
 		
-        ImageIcon i = new ImageIcon("d:/java/yunmusic/QQͼƬ20191110185827.jpg");
-        l.setIcon(i);
-        l.setBounds(200, 443, i.getIconWidth(), i.getIconHeight());
-  
-        getContentPane().add(l);
+       
         
 		contentPane = new JPanel();
 		contentPane.setForeground(Color.CYAN);

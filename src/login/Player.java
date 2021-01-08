@@ -27,7 +27,7 @@ public class Player extends JFrame{
   JButton btnLast = null; //上一曲
   JButton btnPlay = null; //播放
   JButton btnNext = null; //下一曲
-  JButton btnLoop = null; //循环
+
   
  
   //歌曲列表
@@ -65,16 +65,16 @@ public class Player extends JFrame{
     getContentPane().add(songNameLabel);
  
     //5个播放功能键按钮
-    btnLast = new JButton();
-    btnPlay = new JButton();
-    btnNext = new JButton();
-    btnLoop = new JButton();
+    btnLast = new JButton("<");
+    btnPlay = new JButton("||");
+    btnNext = new JButton(">");
+
     
     //位置大小
     btnLast.setBounds(10, 70, 50, 40);
     btnPlay.setBounds(70, 70, 50, 40);
     btnNext.setBounds(130, 70, 50, 40);
-    btnLoop.setBounds(190, 70, 50, 40);
+
    
     //设置图片
    
@@ -82,14 +82,14 @@ public class Player extends JFrame{
     getContentPane().add(btnLast);
     getContentPane().add(btnPlay);
     getContentPane().add(btnNext);
-    getContentPane().add(btnLoop);
+    
   
     //添加监听
     MyMouseListener mml = new MyMouseListener();
     btnLast.addMouseListener(mml);
     btnPlay.addMouseListener(mml);
     btnNext.addMouseListener(mml);
-    btnLoop.addMouseListener(mml);
+
 
  
  
@@ -100,19 +100,7 @@ public class Player extends JFrame{
     listLabel.setFont(listLabelFont);
     getContentPane().add(listLabel);
  
-    //歌曲列表3bf0c59762b038f8ae0a50058fad5064.jpeg
-    /*
-    songsList = new JList();
-    songsList.setBounds(10, 150, 250, 300);
-    songsList.setBackground(Color.CYAN);
-    //把所有歌曲名逐个添加到List中
-    //songsList.setListData(strSongNames);
-    for(int i=0;i<strSongNames.length;i++){
-      DefaultListModel dm = (DefaultListModel)songsList.getModel();
-      dm.add(i,strSongNames[i]);
-    }
-    getContentPane().add(songsList);
-    */
+   
  
     DefaultListModel lm = new DefaultListModel();
     songsList = new JList(lm);
@@ -199,8 +187,6 @@ public class Player extends JFrame{
         index++;
         index = index%strSongNames.length;
  
-      }else if(btn==btnLoop){
-        isLoop = !isLoop;
       }
       
  
